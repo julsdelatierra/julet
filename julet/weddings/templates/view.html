@@ -1,0 +1,88 @@
+<html>
+    {%load i18n%}
+    <head>
+        <title>{{wedding.name}} - {{wedding.welcome}}</title>
+        <link rel="shortcut icon" href="{{MEDIA_URL}}/img/favicon.ico" />
+        <link href="{{MEDIA_URL}}/css/site.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="{{MEDIA_URL}}/js/jquery.js"></script>
+        <script type="text/javascript" src="{{MEDIA_URL}}/js/site.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                {%block header%}
+                    <h1>
+                        {{wedding.name}}
+                    </h1>
+                    <br />
+                {%endblock%}
+            </div>
+            <div id="menu">
+                <a id="index_button" href="#site_index" class="button padding_tiny gray_button">
+                    {%trans 'Inicio'%}
+                </a>
+                <a id="info_button" href="#site_info" class="button padding_tiny gray_button">
+                    {%trans 'Lugar, hora y fecha'%}
+                </a>
+                <a id="gifts_button" href="#site_gifts" class="button padding_tiny gray_button">
+                    {%trans 'Mesa de regalos'%}
+                </a>
+                <a id="new_button" class="button padding_tiny gray_button" href="/">
+                    {%trans '+ Crea tu sitio'%}
+                </a>
+                <div id="share" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                    <a class="addthis_button_facebook"></a>
+                    <a class="addthis_button_twitter"></a>
+                    <a class="addthis_button_email"></a>
+                </div>
+                <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e25cdae5f7450b4"></script>
+            </div>
+            <div id="content">
+                <div id="site_index" class="section">
+                    {{wedding.welcome}}
+                </div>
+                <div id="site_info" class="section">
+                    <p>{%trans 'Fecha de la boda:'%} {{wedding.date}}</p>
+                    <p>{%trans 'Hora ceremonia:'%} {{wedding.time}}</p>
+                    <p>{%trans 'Hora fiesta:'%} {{wedding.time_party}}</p>
+                    <p>{%trans 'Dirección ceremonia:'%} {{wedding.place}}</p>
+                    <p>{%trans 'Dirección fiesta:'%} {{wedding.party}}</p>
+                    {%if map_url != ""%}
+                    <p>
+                        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{map_url}}"></iframe>
+                    </p>
+                    {%endif%}
+                </div>
+                <div id="site_gifts" class="section">
+                    <p>¿Quieres regalarnos algo?, aquí tienes unas opciones.</p>
+                    <p>
+                        Selecciona uno de los obsequios para indicar que es lo que nos regalarás y evitar que se dupliquen.
+                    </p>
+                    <p>
+                        <strong>Nota:</strong> Recuerda que puedes obsequiarnos cosas que no están en la lista.
+                    </p>
+                    <table>
+                        {%for gift in gifts%}
+                            <tr>
+                                <td>
+                                    {%if gift.taken%}
+                                        <input type="checkbox" class="gift" value="{{gift.id}}" checked="true" disabled="true" />
+                                        <label class="marked" for="{{gift.name}}">{{gift.name}}</label>
+                                    {%else%}
+                                        <input type="checkbox" class="gift" value="{{gift.id}}" />
+                                        <label for="{{gift.name}}">{{gift.name}}</label>
+                                    {%endif%}
+                                </td>
+                            </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+                <div style="height:30px"></div>
+                <div id="fb-root"></div><script src="http://connect.facebook.net/es_LA/all.js#xfbml=1"></script><fb:comments href="{{product_url}}/{{wedding.id}}" num_posts="15" width="500"></fb:comments>
+            </div>
+            <div id="footer">
+                <h6>&copy; {{year}} {{product_name}}</h6>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+body{
+    background:#eae9e4;
+    text-shadow:0 1px 0 #fff;
+}
+h1{
+    font-family:Georgia Arial Times;
+    font-style:italic;
+    font-weight:normal;
+    font-size:34pt;
+    color:#4e026e;
+    padding:0;
+    margin:0;
+}
+
+#container{
+    font-family: arial;
+    display:block;
+    width:960px;
+    margin:0 auto;
+}
+#header{
+    display:block;
+    text-align:center;
+}
+#menu{
+    background:#9854b6;
+    width:935px;
+    height:33px;
+    padding-top:20px;
+    padding-left:5px;
+    -moz-border-radius:6px 6px 0 0;
+    -webkit-border-radius:6px 6px 0 0;
+    -o-border-radius:6px 6px 0 0;
+    border-radius:6px 6px 0 0;
+    -moz-box-shadow: 0px 5px 5px 5px #C7CECB;
+    -webkit-box-shadow: 0px 5px 5px 5px #C7CECB;
+    box-shadow: 0px 5px 5px 5px #C7CECB;
+}
+#menu a{
+    margin:5px;
+}
+#menu #share{
+    float:right;
+    margin-top:-14px;
+    width:150px;
+}
+#menu #new_button{
+    float:right;
+    margin-top:-10px;
+}
+#content{
+    padding:10px;
+    width:920px;
+    background:#fff;
+    -moz-border-radius:0 0 6px;
+    -webkit-border-radius:0 0 6px;
+    -o-border-radius:0 0 6px;
+    border-radius:0 0 6px;
+    -moz-box-shadow: 0px 5px 5px 5px #C7CECB;
+    -webkit-box-shadow: 0px 5px 5px 5px #C7CECB;
+    box-shadow: 0px 5px 5px 5px #C7CECB;
+}
+#footer{
+    text-align:center;
+}
+.button{
+    font-size:9pt;
+    border:none;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    -o-border-radius:4px;
+    border-radius:4px;
+    text-shadow:0 -1px 0 #000;
+    color:#fff;
+    cursor:pointer;
+    padding:10px 10px;
+}
+a.button{
+    text-decoration:none;
+}
+a.button:hover{
+    text-decoration:none;
+}
+.purple_button{
+    background:#4e026e;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.94, #4E026E),
+        color-stop(0.19, #9954B6)
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        #4E026E 94%,
+        #9954B6 19%
+    );
+}
+.gray_button{
+    color:#000;
+    text-shadow:#ddd 0 1px 0;
+    background:#d9d9d9;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.94, #d9d9d9),
+        color-stop(0.19, #bbb)
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        #d9d9d9 94%,
+        #bbb 19%
+    );
+    border:2px #c0c0c0 solid;
+    border:none;
+}
+.center{
+    text-align:center;
+}
+.marked{
+    text-decoration: line-through;
+}
+.options{
+    width:130px;
+    padding:20px;
+    position:fixed;
+    top:0;
+    right:0;
+}

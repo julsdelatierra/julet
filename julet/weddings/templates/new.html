@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%load i18n%}
+{%block content%}
+    <p class="big center">
+        {%trans 'El sitio aun no existe. ¿Deseas crearlo?'%}
+    </p>
+    <p class="big center">{{id}}</p>
+    <p class="center">
+        <a href="/new?id={{id}}" class="button big padding purple_button">
+            {%trans 'Crear sitio'%}
+        </a>
+    </p>
+{%endblock%}

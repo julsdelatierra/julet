@@ -1,0 +1,34 @@
+<html>
+    {%load i18n%}
+    <head>
+        <title>{{product_name}} - {{product_desc}}</title>
+        <link rel="shortcut icon" href="{{MEDIA_URL}}/img/favicon.ico" />
+        <link href="{{MEDIA_URL}}/css/style.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="{{MEDIA_URL}}/js/jquery.js"></script>
+        <script type="text/javascript" src="{{MEDIA_URL}}/js/script.js"></script>
+        
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                {%block header%}
+                    <h1>
+                        <a href="/">
+                            {{product_name}}
+                        </a>
+                    </h1>
+                    <p class="center tiny">
+                        {{product_desc}}
+                    </p>
+                {%endblock%}
+            </div>
+            <hr class="dotted" />
+            <div id="content">
+                {%block content%}{%endblock%}
+            </div>
+        </div>
+        <div id="footer">
+            <h6>&copy; {{year}} {{product_name}}</h6>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%load i18n%}
+{%block content%}
+    <br />
+    <br />
+    <div class="full center">
+        <input class="big padding" type="text" placeholder="{%trans '¿Que celebras?'%}" id="name" />
+        <input class="big padding orange_button button" type="button" value="{%trans 'Crear fiesta'%}" onclick="var name=document.getElementById('name').value.replace(/ /gi,''); location.href='/'+name+'/';" />
+    </div>
+    <br />
+    <br />
+    <div class="options">
+        <p>
+            <div class="addthis_toolbox addthis_default_style">
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_tweet"></a>
+            </div>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e371bc60e964e18"></script>
+        </p>
+    </div>
+{%endblock%}
